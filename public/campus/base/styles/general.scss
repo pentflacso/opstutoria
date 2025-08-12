@@ -1,13 +1,7 @@
-h3 {
-    color: violet !important;
-}
-
-
 /* THEME STYLES */
 
 // Font import
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Sen:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 // Normalize
 * {
     margin: 0;
@@ -19,21 +13,24 @@ body {
     margin: 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-family: "Nunito Sans", sans-serif;
+    font-family: "Noto Sans", sans-serif !important;
     overscroll-behavior: none;
 }
 
 // Theme Colors
 $black: #464646;
-$gray-1: #cccccc;
-$gray-2: #F3F3F3;
+$gray-1: #EFEFEF;
+$gray-2: #CBCBCB;
 $white: #ffffff;
-$violet: #A36BCE;
-$sky-blue: #39A4F5;
+$violet: #8A38F5;
+$green: #2ADD98;
+
+/* $sky-blue: #39A4F5;
 $aqua-green: #3AB8BC;
 $apple-green: #69B620;
 $orange: #F56B30;
-$yellow: #FDF7BF;
+$yellow: #FDF7BF; */
+
 // Typography Levels
 @mixin font-level-1 {
     font-size: 30px;
@@ -157,7 +154,7 @@ $yellow: #FDF7BF;
             padding: 0;
             overflow-x: hidden;
             .main-inner {
-                max-width: none !important;
+                max-width: 900px !important;
                 margin: 0;
                 padding: 0;
             }
