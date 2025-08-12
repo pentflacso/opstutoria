@@ -35,6 +35,9 @@ $green: #2ADD98;
     height: 35px;
     border-radius: 5px;
     font-family: "Noto Sans", sans-serif;
+    display: inline-block;
+    align-content: center;
+    ;
     &:focus {
         box-shadow: none;
     }
