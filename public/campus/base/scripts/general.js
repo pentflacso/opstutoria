@@ -15,9 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Verificar si el body tiene la clase "editing"
-    if (!document.body.classList.contains("editing")) {
+    /* if (!document.body.classList.contains("editing")) {
         return;
-    }
+    } */
 
     // Crear el switch de modo dev
     const devSwitchContainer = document.createElement("div");
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function() {
          */
 
         if (document.body.classList.contains('editing')) return;
-        
+
         const allSections = document.querySelectorAll('ul.topics li.course-section');
 
         let firstValidSection = null;
@@ -151,13 +151,13 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
 
-    }else{
+    } else {
         newQuiz();
-        
+
         finishQuiz();
-        
+
         quizInputCheck();
-        
+
         reviewQuiz();
 
         // Si hay entradas nuevas, redirecciona para agregar una nueva entrada
@@ -190,7 +190,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 const pageContent = document.querySelector('#page-content');
 
                 if (pageContent && pageContent.parentNode) {
-                pageContent.parentNode.insertBefore(backDiv, pageContent);
+                    pageContent.parentNode.insertBefore(backDiv, pageContent);
                 }
             }
         }
@@ -232,7 +232,7 @@ document.addEventListener("DOMContentLoaded", function() {
             textarea.id = input.id;
             textarea.name = input.name;
             textarea.placeholder = parentInput.title ? parentInput.title : input.placeholder;
-            
+
             // Reemplazar el input por el textarea
             input.parentNode.replaceChild(textarea, input);
         });
@@ -254,7 +254,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const text_btn_new_entry = document.querySelector(".base-libreta") ? 'Agregar nota' : "Escribir";
 
         if (document.body.id !== 'page-mod-data-view') return;
-        
+
         let breadcrumbUrl = '#';
         let breadcrumbTitle = '';
 
@@ -269,8 +269,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Obtener el valor del parámetro "mode" en la URL
         const urlParams = new URLSearchParams(window.location.search);
-        const mode = urlParams.get('mode') == 'single' || urlParams.get('rid')  ? 'single' : 'list';
-        
+        const mode = urlParams.get('mode') == 'single' || urlParams.get('rid') ? 'single' : 'list';
+
         // 2. Verifica si existe el contenedor del sticky footer
         const stickyFooter = document.querySelector('#page-mod-data-view #sticky-footer');
 
@@ -291,7 +291,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     item.appendChild(avanzarLink);
 
                     //Si la BD de la libreta es de modo "single"
-                    if(mode == 'single' && text_btn_new_entry == 'Agregar nota') {
+                    if (mode == 'single' && text_btn_new_entry == 'Agregar nota') {
                         const d = urlParams.get('d');
 
                         let seeAllUrl = window.location.origin + window.location.pathname;
@@ -299,11 +299,11 @@ document.addEventListener("DOMContentLoaded", function() {
                         if (d) {
                             seeAllUrl += `?d=${encodeURIComponent(d)}`;
                         }
-                        
+
                         const seeAllBtn = document.createElement('a');
                         seeAllBtn.href = seeAllUrl;
                         seeAllBtn.textContent = 'Ver todo';
-                        seeAllBtn.className = 'btn btn-secondary'; 
+                        seeAllBtn.className = 'btn btn-secondary';
 
                         item.insertBefore(seeAllBtn, item.firstChild);
                     }
@@ -314,11 +314,11 @@ document.addEventListener("DOMContentLoaded", function() {
                         btnPrimary.textContent = text_btn_new_entry;
                     }
 
-                }else{                 
+                } else {
                     /**
                      * Si existe en el body la clase "bd-sv-pagination-none"
                      * y el modo es "single", ocultar paginación
-                    */
+                     */
 
                     if (!document.body.classList.contains('bd-sv-pagination-none')) return;
                     if (document.body.classList.contains('editing')) return;
@@ -333,7 +333,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 }
             });
-        }     
+        }
     }
 
     /**
@@ -341,33 +341,33 @@ document.addEventListener("DOMContentLoaded", function() {
      * y las coloca en el contenedor accordeón correspondiente según su clase.
      * 
      */
-    function accordionCardBd(){
+    function accordionCardBd() {
         // 1. Verificar si el body tiene el ID correcto
         if (document.body.id !== 'page-mod-data-view') return;
-        
+
         // 2. Verificar si existe el contenedor de la tabla acordeón
         const accordionContainer = document.querySelector('.accordion-table-bd');
-        
+
         // 3. Si no existe, salir de la función
         if (!accordionContainer) return;
-        
+
         // 4. Seleccionar todas las tarjetas dentro de la BD
         const cards = document.querySelectorAll('.card-bd');
 
         cards.forEach(card => {
             // 5. Buscar la clase que sigue el patrón "C1", "C2", etc.
             const classList = Array.from(card.classList);
-            const matchClass = classList.find(cls => /^C\d+$/.test(cls)); 
+            const matchClass = classList.find(cls => /^C\d+$/.test(cls));
 
             // 6. Si se encuentra una clase que coincide, buscar el contenedor correspondiente
             if (matchClass) {
                 const contentCard = document.querySelector(`.content-card-bd[data-collect="${matchClass}"]`);
-                
+
                 const targetCollapse = contentCard.querySelector('.contentcollapse-bd');
-                
+
                 if (targetCollapse) {
                     targetCollapse.appendChild(card);
-                }     
+                }
             }
         });
 
@@ -395,7 +395,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 const isOpen = content.classList.contains('show');
 
                 // Si ya está abierto, contraer y al resto no hacer nada
-                if(isOpen){
+                if (isOpen) {
                     // Si ya está abierto, colapsar
                     content.classList.remove('show');
                     title.classList.remove('icon-collapse');
@@ -427,32 +427,32 @@ document.addEventListener("DOMContentLoaded", function() {
      * y las coloca en el contenedor accordeón correspondiente según su clase.
      * 
      */
-    function accordionWhatsAppBd(){
+    function accordionWhatsAppBd() {
         // 1. Verificar si el body tiene el ID correcto
         if (document.body.id !== 'page-mod-data-view') return;
         // 2. Verificar si existe el contenedor de la tabla acordeón
         const accordionContainer = document.querySelector('.accordion-whatsapp');
-        
+
         // 3. Si no existe, salir de la función
         if (!accordionContainer) return;
-        
+
         // 4. Seleccionar todas las tarjetas dentro de la BD
         const cards = document.querySelectorAll('.message-row');
-        
+
         //Contador para alternar entre left y right
         let counter = 0;
 
         cards.forEach(card => {
             // 5. Buscar la clase que sigue el patrón "C1", "C2", etc.
             const classList = Array.from(card.classList);
-            const matchClass = classList.find(cls => /^C\d+$/.test(cls)); 
+            const matchClass = classList.find(cls => /^C\d+$/.test(cls));
 
             // 6. Si se encuentra una clase que coincide, buscar el contenedor correspondiente
             if (matchClass) {
                 const contentCard = document.querySelector(`.whatsapp-component[data-collect="${matchClass}"]`);
-                
+
                 const targetCollapse = contentCard.querySelector('.wrapper-messages');
-                
+
                 if (targetCollapse) {
                     // 8. Alternar la clase en el div.message-card
                     const messageCard = card.querySelector('.message-card');
@@ -463,7 +463,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                     // 9. Agregar la card al contenedor
                     targetCollapse.appendChild(card);
-                }     
+                }
             }
         });
 
@@ -491,7 +491,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 const isOpen = content.classList.contains('show');
 
                 // Si ya está abierto, contraer y al resto no hacer nada
-                if(isOpen){
+                if (isOpen) {
                     // Si ya está abierto, colapsar
                     content.classList.remove('show');
                     title.classList.remove('icon-collapse');
@@ -548,11 +548,11 @@ document.addEventListener("DOMContentLoaded", function() {
         if (document.body.classList.contains('editing')) return;
         // Verificar si el body tiene el ID correcto
         if (document.body.id !== 'page-mod-quiz-view') return;
-        
+
         const tableQuizSummary = document.querySelector('.quizattemptsummary');
-        
+
         if (tableQuizSummary) return;
-        
+
         // Verificar si existe el formulario con la clase "quizstartbuttondiv"
         const formReadyForm = document.querySelector('.quizstartbuttondiv form');
 
@@ -560,15 +560,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
         formReadyForm.submit();
     }
-    
+
     function finishQuiz() {
         if (document.body.classList.contains('editing')) return;
         // Verificar si el body tiene el ID correcto
         if (document.body.id !== 'page-mod-quiz-summary') return;
         // Verificar si existe el botón de finalizar el cuestionario
         const finishFrom = document.querySelector('#frm-finishattempt');
-        
-        finishFrom.submit();      
+
+        finishFrom.submit();
     }
 
 
@@ -578,11 +578,11 @@ document.addEventListener("DOMContentLoaded", function() {
         if (document.body.id !== 'page-mod-quiz-review') return;
         // Verificar si existe el botón de finalizar el cuestionario
         const finishReview = document.querySelector('.submitbtns .mod_quiz-next-nav');
-        
+
         if (finishReview) finishReview.click();
     }
 
-    function quizInputCheck(){
+    function quizInputCheck() {
         if (document.body.classList.contains('editing')) return;
         // Verificar si el body tiene el ID correcto
         if (document.body.id !== 'page-mod-quiz-attempt') return;
@@ -612,9 +612,9 @@ document.addEventListener("DOMContentLoaded", function() {
             submitButton.disabled = false;
             submitButton.classList.remove('btn-secondary');
             submitButton.classList.add('btn-primary');
-            
+
             // Si ya existe el mensaje, eliminarlo
-            if(msj){
+            if (msj) {
                 form.removeChild(msj);
             }
 
@@ -625,12 +625,12 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         // Si el formulario existe y no hay checkboxes seleccionados, mostrar mensaje
-        if(form && algunoSeleccionado) return;
+        if (form && algunoSeleccionado) return;
 
         const divInfo = document.createElement('div');
         divInfo.className = 'alert alert-danger alert-block fade in alert-dismissible alert-checkbox';
         divInfo.textContent = 'Por favor, selecciona al menos una opción antes de continuar.';
 
-        form.insertBefore(divInfo, form.firstChild);    
+        form.insertBefore(divInfo, form.firstChild);
     }
 });
