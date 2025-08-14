@@ -26,6 +26,7 @@ $violet: #8A38F5;
 $dark-violet: #681DC9;
 $light-violet: #9C73FF;
 $green: #2ADD98;
+$dark-green: #28CB8D;
 // Buttons
 @mixin button($variant: primary) {
     box-sizing: border-box;
@@ -125,7 +126,52 @@ $green: #2ADD98;
                             width: 100%;
                             height: 100%;
                         }
+                        .grid-completion {
+                            right: 6%;
+                            top: 9%;
+                        }
                     }
+                }
+                .card-header {
+                    background-color: $gray-1;
+                }
+            }
+            .grid-section.card:has(.grid-percentagevalue-100) {
+                .card-header {
+                    background-color: $dark-green;
+                    color: white !important;
+                }
+                .grid-completion {
+                    background-color: white;
+                    color: $dark-green;
+                    font-weight: 700;
+                    border-color: $dark-green;
+                }
+            }
+            .grid-section.card:has(.grid-completion-colour-middle) {
+                .card-header {
+                    background-color: $violet;
+                    color: white !important;
+                }
+                .grid-completion {
+                    background-color: white;
+                    color: $violet;
+                    font-weight: 700;
+                    //border-color: $violet;
+                    //border-bottom-color: red;
+                    //border-right-color: red;
+                    //border-left-color: pink;
+                }
+            }
+            .grid-section.card:has(.grid-percentagevalue-0) {
+                .card-header {
+                    background-color: $gray-1;
+                }
+                .grid-completion {
+                    background-color: white;
+                    color: $gray-3;
+                    font-weight: 700;
+                    border-color: $gray-2;
                 }
             }
         }
