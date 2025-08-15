@@ -27,6 +27,7 @@ $dark-violet: #681DC9;
 $light-violet: #9C73FF;
 $green: #2ADD98;
 $dark-green: #28CB8D;
+$yellow: #FFBE1D;
 // Buttons
 @mixin button($variant: primary) {
     box-sizing: border-box;
@@ -172,6 +173,48 @@ $dark-green: #28CB8D;
                     color: $gray-3;
                     font-weight: 700;
                     border-color: $gray-2;
+                }
+            }
+        }
+    }
+}
+
+// Estilos de los Recursos - sin edición activa
+body:not(.editing) {
+    li.activity {
+        .activity-item:has(.btn-success) {
+            background-color: $green;
+        }
+        .activity-grid {
+            a.activityiconcontainer {
+                background: transparent;
+                width: 0;
+                margin-right: 0 !important;
+                min-width: initial;
+                img {
+                    display: none;
+                }
+            }
+            .activity-name-area {
+                font-weight: bold;
+            }
+            .activity-completion {
+                .activity-information {
+                    .completion-info {}
+                }
+            }
+            .activity-altcontent {
+                border-top: 0;
+                margin-top: 0;
+                padding-top: 0;
+                span {
+                    color: white;
+                    font-size: .75rem;
+                    font-weight: bold;
+                    background-color: $yellow;
+                    padding: 4px 10px;
+                    border-radius: 1500px;
+                    text-transform: uppercase;
                 }
             }
         }
