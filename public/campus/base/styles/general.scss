@@ -79,6 +79,9 @@ $yellow: #FFBE1D;
         font-family: "Noto Sans", sans-serif;
     }
     #page-content {
+        p.text-right {
+            text-align: left !important;
+        }
         .btn-primary {
             @include button(primary);
         }
