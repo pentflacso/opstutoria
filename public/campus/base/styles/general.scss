@@ -65,6 +65,13 @@ $yellow: #FFBE1D;
 }
 
 // General Styles
+#page-content,
+#lambda-incourse-header,
+.wrapper-lambda .back {
+    max-width: 1000px !important;
+    margin: auto;
+}
+
 #page-course-view-grid {
     h1,
     h2,
@@ -72,8 +79,6 @@ $yellow: #FFBE1D;
         font-family: "Noto Sans", sans-serif;
     }
     #page-content {
-        max-width: 1000px;
-        margin: auto;
         .btn-primary {
             @include button(primary);
         }
