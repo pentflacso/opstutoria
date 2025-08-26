@@ -70,6 +70,17 @@ $yellow: #FFBE1D;
 .wrapper-lambda .back {
     max-width: 1000px !important;
     margin: auto;
+    width: 100%;
+}
+
+.back a {
+    font-size: 0;
+}
+
+.back a::after {
+    content: "← Volver";
+    font-size: 1.2rem;
+    font-weight: 500;
 }
 
 .destacado {
@@ -84,10 +95,23 @@ h3 {
     font-family: "Noto Sans", sans-serif;
 }
 
+.section-navigation.navigationtitle {
+    display: none !important;
+}
+
 #page-course-view-grid {
     #page-content {
         p.text-right {
             text-align: left !important;
+            margin: 3rem 0;
+        }
+        p.text-right a {
+            font-size: 0;
+        }
+        .text-right a::after {
+            content: "← Volver";
+            font-size: 1.2rem;
+            font-weight: 500;
         }
         .btn-primary {
             @include button(primary);
