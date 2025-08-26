@@ -72,12 +72,19 @@ $yellow: #FFBE1D;
     margin: auto;
 }
 
+.destacado {
+    background-color: #F4F1FF;
+    padding: 2rem;
+    margin-bottom: 1rem;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Noto Sans", sans-serif;
+}
+
 #page-course-view-grid {
-    h1,
-    h2,
-    h3 {
-        font-family: "Noto Sans", sans-serif;
-    }
     #page-content {
         p.text-right {
             text-align: left !important;
@@ -116,7 +123,7 @@ $yellow: #FFBE1D;
         }
         // Tarjetas modulos
         .thegrid {
-            #section-2 {
+            #section-3 {
                 .card-header.text-truncate {
                     display: flex;
                     flex-direction: column;
@@ -126,7 +133,17 @@ $yellow: #FFBE1D;
                     margin-bottom: 0.25em;
                 }
             }
-            #section-3 {
+            #section-4 {
+                .card-header.text-truncate {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .card-header.text-truncate::before {
+                    content: "Module 1";
+                    margin-bottom: 0.25em;
+                }
+            }
+            #section-5 {
                 .card-header.text-truncate {
                     display: flex;
                     flex-direction: column;
@@ -136,13 +153,13 @@ $yellow: #FFBE1D;
                     margin-bottom: 0.25em;
                 }
             }
-            #section-4 {
+            #section-6 {
                 .card-header.text-truncate {
                     display: flex;
                     flex-direction: column;
                 }
                 .card-header.text-truncate::before {
-                    content: "Módulo 3";
+                    content: "Module 2";
                     margin-bottom: 0.25em;
                 }
             }
