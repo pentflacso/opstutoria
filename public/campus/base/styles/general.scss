@@ -266,6 +266,15 @@ h3 {
     }
 }
 
+// Recurso Página
+#page-mod-page-view {
+    #page-content {
+        h3 {
+            color: $violet;
+        }
+    }
+}
+
 // Estilos de los Recursos - sin edición activa
 body:not(.editing) {
     li.activity {
