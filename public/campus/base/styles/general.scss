@@ -187,6 +187,26 @@ h3 {
                     margin-bottom: 0.25em;
                 }
             }
+            #section-7 {
+                .card-header.text-truncate {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .card-header.text-truncate::before {
+                    content: "Módulo 3";
+                    margin-bottom: 0.25em;
+                }
+            }
+            #section-8 {
+                .card-header.text-truncate {
+                    display: flex;
+                    flex-direction: column;
+                }
+                .card-header.text-truncate::before {
+                    content: "Module 3";
+                    margin-bottom: 0.25em;
+                }
+            }
             .grid-section.card {
                 width: 280px;
                 height: 300px;
