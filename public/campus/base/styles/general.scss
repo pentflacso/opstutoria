@@ -297,7 +297,10 @@ h3 {
 
 // Estilos de los Recursos - sin edición activa
 body:not(.editing) {
-    li.activity {
+    li.activity:not(.label) .activity-item{
+            background-color: $gray-1;
+        }
+    li.activity {        
         .activity-item:has(.btn-success) {
             background-color: $green;
         }
