@@ -333,7 +333,7 @@ body:not(.editing) {
                 font-size: 1.15rem;
                 .activityname {
                     a {
-                        color: black;
+                        color: black !important;
                     }
                 }
             }
