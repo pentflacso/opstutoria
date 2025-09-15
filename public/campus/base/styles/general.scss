@@ -17,7 +17,7 @@ body {
 }
 
 // Theme Colors
-$black: #464646;
+$black: #1f1f1f;
 $gray-1: #EFEFEF;
 $gray-2: #CBCBCB;
 $gray-3: #4E4F50;
@@ -318,7 +318,7 @@ body:not(.editing) {
             background-color: $green;
         }
         .activity-grid {
-            color: black;
+            color: $black;
             a.activityiconcontainer {
                 background: transparent;
                 width: 0;
@@ -333,7 +333,7 @@ body:not(.editing) {
                 font-size: 1.15rem;
                 .activityname {
                     a {
-                        color: black !important;
+                        color: $black !important;
                     }
                 }
             }
