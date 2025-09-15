@@ -318,6 +318,7 @@ body:not(.editing) {
             background-color: $green;
         }
         .activity-grid {
+            color: black;
             a.activityiconcontainer {
                 background: transparent;
                 width: 0;
@@ -330,6 +331,11 @@ body:not(.editing) {
             .activity-name-area {
                 font-weight: bold;
                 font-size: 1.15rem;
+                .activity-name {
+                    a {
+                        color: black;
+                    }
+                }
             }
             .activity-completion {
                 .activity-information {
