@@ -27,7 +27,7 @@ $dark-violet: #5B2C86;
 $light-violet: #9C73FF;
 $green: #80BC00;
 $dark-green: #80BC00;
-$yellow: #00205C;
+$blue: #00205C;
 // Buttons
 @mixin button($variant: primary) {
     box-sizing: border-box;
@@ -84,7 +84,8 @@ $yellow: #00205C;
 }
 
 .destacado {
-    background-color: #F4F1FF;
+    background-color: $blue;
+    color: white;
     padding: 2rem;
     margin-bottom: 1rem;
 }
