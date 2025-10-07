@@ -24,7 +24,7 @@ $gray-3: #4E4F50;
 $white: #ffffff;
 $violet: #5B2C86;
 $dark-violet: #5B2C86;
-$light-violet: #9C73FF;
+$light-violet: #E6DDFF;
 $green: #80BC00;
 $dark-green: #80BC00;
 $blue: #00205C;
@@ -357,6 +357,20 @@ body:not(.editing) {
                     text-transform: uppercase;
                 }
             }
+        }
+    }
+}
+
+// Base de datos
+
+#page-mod-data-view {
+    #defaulttemplate-addentry {
+        background-color: $light-violet;
+        padding: 2.5rem;
+        border: 1px solid $violet;
+        margin-bottom: 2rem;
+        .comment-message {
+            font-size: 14px !important;
         }
     }
 }
