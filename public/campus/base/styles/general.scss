@@ -24,7 +24,7 @@ $gray-3: #4E4F50;
 $white: #ffffff;
 $violet: #5B2C86;
 $dark-violet: #5B2C86;
-$light-violet: #E6DDFF;
+$light-violet: #f1ebff;
 $green: #80BC00;
 $dark-green: #80BC00;
 $blue: #00205C;
@@ -364,7 +364,13 @@ body:not(.editing) {
 // Base de datos
 
 #page-mod-data-view {
-    #defaulttemplate-addentry {
+    #defaulttemplate-addentry, #data-singleview-content {
+        .btn.dropdown-toggle {
+            background-color: $gray-2 !important;
+        }
+        .row {
+            background-color: transparent;
+        }
         background-color: $light-violet;
         padding: 2.5rem;
         border: 1px solid $violet;
