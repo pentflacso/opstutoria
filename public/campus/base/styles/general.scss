@@ -92,7 +92,10 @@ $blue: #00205c;
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
   font-family: "Noto Sans", sans-serif;
 }
 
@@ -107,7 +110,7 @@ h3 {
   @include button(secondary);
 }
 
-#page-course-view-grid {
+#page-course-view-section-grid {
   #page-content {
     p.text-right {
       text-align: left !important;
@@ -137,12 +140,16 @@ h3 {
         }
       }
       .content {
-        h3 {
+        h3,
+        h4 {
           font-family: "Noto Sans", sans-serif;
           font-weight: bold;
           color: $violet;
           font-size: 2.5rem;
           margin-bottom: 1.5rem;
+          strong {
+            font-weight: bold;
+          }
         }
         .editor-indent,
         .quote {
@@ -153,156 +160,157 @@ h3 {
         }
       }
     }
-    // Tarjetas modulos
-    .thegrid {
-      gap: 3rem 1rem;
-      #section-3 {
-        .card-header {
-          display: flex;
-          flex-direction: column;
-        }
-        .card-header::before {
-          content: "Módulo 1";
-          font-size: 1.25rem;
-          color: $violet;
-          margin-bottom: 0.25em;
-        }
+  }
+}
+
+// Tarjetas modulos
+.thegrid {
+  gap: 3rem 1rem;
+  #section-3 {
+    .card-header {
+      display: flex;
+      flex-direction: column;
+    }
+    .card-header::before {
+      content: "Módulo 1";
+      font-size: 1.25rem;
+      color: $violet;
+      margin-bottom: 0.25em;
+    }
+  }
+  #section-4 {
+    .card-header {
+      display: flex;
+      flex-direction: column;
+    }
+    .card-header::before {
+      content: "Module 1";
+      font-size: 1.25rem;
+      color: $violet;
+      margin-bottom: 0.25em;
+    }
+  }
+  #section-5 {
+    .card-header {
+      display: flex;
+      flex-direction: column;
+    }
+    .card-header::before {
+      content: "Módulo 2";
+      font-size: 1.25rem;
+      color: $violet;
+      margin-bottom: 0.25em;
+    }
+  }
+  #section-6 {
+    .card-header {
+      display: flex;
+      flex-direction: column;
+    }
+    .card-header::before {
+      content: "Module 2";
+      font-size: 1.25rem;
+      color: $violet;
+      margin-bottom: 0.25em;
+    }
+  }
+  #section-7 {
+    .card-header {
+      display: flex;
+      flex-direction: column;
+    }
+    .card-header::before {
+      content: "Módulo 3";
+      font-size: 1.25rem;
+      color: $violet;
+      margin-bottom: 0.25em;
+    }
+  }
+  #section-8 {
+    .card-header {
+      display: flex;
+      flex-direction: column;
+    }
+    .card-header::before {
+      content: "Module 3";
+      font-size: 1.25rem;
+      color: $violet;
+      margin-bottom: 0.25em;
+    }
+  }
+  .grid-section.card {
+    width: 280px !important;
+    height: 300px;
+    a.grid-section-inner {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      .card-header {
+        order: 2;
+        overflow: initial;
+        text-overflow: initial;
+        white-space: normal;
+        height: 100%;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 120%;
+        color: $gray-3;
+        padding: 2rem 1.5rem;
       }
-      #section-4 {
-        .card-header {
-          display: flex;
-          flex-direction: column;
-        }
-        .card-header::before {
-          content: "Module 1";
-          font-size: 1.25rem;
-          color: $violet;
-          margin-bottom: 0.25em;
-        }
-      }
-      #section-5 {
-        .card-header {
-          display: flex;
-          flex-direction: column;
-        }
-        .card-header::before {
-          content: "Módulo 2";
-          font-size: 1.25rem;
-          color: $violet;
-          margin-bottom: 0.25em;
-        }
-      }
-      #section-6 {
-        .card-header {
-          display: flex;
-          flex-direction: column;
-        }
-        .card-header::before {
-          content: "Module 2";
-          font-size: 1.25rem;
-          color: $violet;
-          margin-bottom: 0.25em;
-        }
-      }
-      #section-7 {
-        .card-header {
-          display: flex;
-          flex-direction: column;
-        }
-        .card-header::before {
-          content: "Módulo 3";
-          font-size: 1.25rem;
-          color: $violet;
-          margin-bottom: 0.25em;
-        }
-      }
-      #section-8 {
-        .card-header {
-          display: flex;
-          flex-direction: column;
-        }
-        .card-header::before {
-          content: "Module 3";
-          font-size: 1.25rem;
-          color: $violet;
-          margin-bottom: 0.25em;
-        }
-      }
-      .grid-section.card {
-        width: 280px !important;
-        height: 300px;
-        a.grid-section-inner {
-          display: flex;
-          flex-direction: column;
+      .grid-image,
+      .grid-generatedimage {
+        order: 1;
+        img {
+          object-fit: cover;
+          width: 100%;
           height: 100%;
-          .card-header {
-            order: 2;
-            overflow: initial;
-            text-overflow: initial;
-            white-space: normal;
-            height: 100%;
-            font-size: 1.5rem;
-            font-weight: bold;
-            line-height: 120%;
-            color: $gray-3;
-            padding: 2rem 1.5rem;
-          }
-          .grid-image,
-          .grid-generatedimage {
-            order: 1;
-            img {
-              object-fit: cover;
-              width: 100%;
-              height: 100%;
-            }
-            .grid-completion {
-              right: 6%;
-              top: 9%;
-            }
-          }
-        }
-        .card-header {
-          background-color: $gray-1;
-        }
-      }
-      .grid-section.card:has(.grid-percentagevalue-100) {
-        .card-header {
-          background-color: $dark-green;
-          color: white !important;
         }
         .grid-completion {
-          background-color: white;
-          color: $dark-green;
-          font-weight: 700;
-          border-color: $dark-green;
+          right: 6%;
+          top: 9%;
         }
       }
-      .grid-section.card:has(.grid-completion-colour-middle) {
-        .card-header {
-          background-color: $violet;
-          color: white !important;
-        }
-        .grid-completion {
-          background-color: white;
-          color: $violet;
-          font-weight: 700;
-          //border-color: $violet;
-          //border-bottom-color: red;
-          //border-right-color: red;
-          //border-left-color: pink;
-        }
-      }
-      .grid-section.card:has(.grid-percentagevalue-0) {
-        .card-header {
-          background-color: $gray-1;
-        }
-        .grid-completion {
-          background-color: white;
-          color: $gray-3;
-          font-weight: 700;
-          border-color: $gray-2;
-        }
-      }
+    }
+    .card-header {
+      background-color: $gray-1;
+    }
+  }
+  .grid-section.card:has(.grid-percentagevalue-100) {
+    .card-header {
+      background-color: $dark-green;
+      color: white !important;
+    }
+    .grid-completion {
+      background-color: white;
+      color: $dark-green;
+      font-weight: 700;
+      border-color: $dark-green;
+    }
+  }
+  .grid-section.card:has(.grid-completion-colour-middle) {
+    .card-header {
+      background-color: $violet;
+      color: white !important;
+    }
+    .grid-completion {
+      background-color: white;
+      color: $violet;
+      font-weight: 700;
+      //border-color: $violet;
+      //border-bottom-color: red;
+      //border-right-color: red;
+      //border-left-color: pink;
+    }
+  }
+  .grid-section.card:has(.grid-percentagevalue-0) {
+    .card-header {
+      background-color: $gray-1;
+    }
+    .grid-completion {
+      background-color: white;
+      color: $gray-3;
+      font-weight: 700;
+      border-color: $gray-2;
     }
   }
 }
